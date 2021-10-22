@@ -1,0 +1,5 @@
+[help]
+        autocorrect = 5
+
+[rebase]
+        autosquash = true

@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias recent ="git for-each-ref --count=5 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
