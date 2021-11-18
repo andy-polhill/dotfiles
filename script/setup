@@ -1,0 +1,21 @@
+#!/bin/bash
+
+ln -sf ~/dotfiles/zshrc ~/.zshrc
+ln -sf ~/dotfiles/VSCode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
+git config --global include.path "~/dotfiles/.gitconfig"
+
+if [ $SPIN ]; then
+  DOTFILES_DIR=~/dotfiles
+
+  gpgconf --launch dirmngr
+  gpg --keyserver keys.openpgp.org --recv C6A874C851302E008ABD3C24CDBAC10F5D1DA356
+else
+  DOTFILES_DIR=~/.dotfiles
+fi
+
+for i in $DOTFILES_DIR/dotfiles/*; do
+  echo "Installing $(basename $i)..."
+  rm -rf ~/.$(basename $i)
+  ln -s $i ~/.$(basename $i)
+done

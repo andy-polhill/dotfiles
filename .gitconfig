@@ -1,5 +1,17 @@
+[user]
+	name = Andrew Polhill
+
+[github]
+	user = andy-polhill
+
 [help]
         autocorrect = 5
 
 [rebase]
         autosquash = true
+
+[alias]
+        recent = git for-each-ref --count=5 --sort=-committerdate refs/heads/ --format='%(refname:short)
+
+[commit]
+        gpgsign = true
