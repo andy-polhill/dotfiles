@@ -39,4 +39,14 @@ ln -vsfn ~/dotfiles/core/configs/.gitignore_global ~/.gitignore_global
 # install again. This will overwrite any existing .zshrc.
 ln -vsfn ~/dotfiles/.zshrc ~/.zshrc
 
+# Setup commit signing via public key
+if [ $SPIN ]; then
+  DOTFILES_DIR=~/dotfiles
+
+  gpgconf --launch dirmngr
+  gpg --keyserver keys.openpgp.org --recv B52AAFEB5E98E90DAD0372E861FC2AEA299D6ACE
+else
+  DOTFILES_DIR=~/.dotfiles
+fi
+
 source ~/dotfiles/personal/install.sh
