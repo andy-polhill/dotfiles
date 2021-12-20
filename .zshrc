@@ -6,6 +6,9 @@ export DF_HOME=~/dotfiles
 export DF_CORE=$DF_HOME/core
 export DF_USER=$DF_HOME/personal
 
+# Git autocomplete
+autoload -Uz compinit && compinit
+
 # Create common color functions.
 autoload -U colors
 colors
