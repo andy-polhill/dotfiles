@@ -1,8 +1,6 @@
 # Add your preferred git settings here. This will overwrite anything in `core/configs/.gitconfig`.
 [commit]
         gpgsign = true
-[credential]
-        helper = store --file /opt/dev/var/private/git_credential_store
 [core]
         commitGraph = true
 [diff]
